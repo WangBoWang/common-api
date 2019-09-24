@@ -1,4 +1,4 @@
-package Utils;
+package utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -15,27 +15,31 @@ import java.util.Date;
  */
 public class DateUtils {
 
-    private final static String YEAR= "YYYY";
-    private final static String MONTH= "MM";
-    private final static String DAY= "DD";
-    private final static String HOUR= "HH";
-    private final static String MINUTE="mm";
-    private final static String SECOND= "ss";
-    private final static String MILLISECOND= "SSS";
-    private final static String YYYY_MM= "YYYY-MM";
-    private final static String YYYY_MM_DD= "YYYY-MM-dd";
-    private final static String YYYY_MM_DD_24HH_mm_ss= "YYYY-MM-dd HH:mm:ss";//24小时制
-    private final static String YYYY_MM_DD_12HH_mm_ss= "YYYY-MM-dd hh:mm:ss";//12小时制
-    private final static String YYYY_MM_DD_HH_mm_ss_SSS= "YYYY-MM-dd HH:mm:ss:SSS";//24小时制
-    private final static String YYYYMM= "YYYYMM";
-    private final static String YYYYMMDD= "YYYYMMdd";
-    private final static String YYYYMMDDHHmmss= "YYYYMMddHHmmss";//24小时制
-    private static SimpleDateFormat sdf ;
+    public final static String YEAR= "YYYY";
+    public final static String MONTH= "MM";
+    public final static String DAY= "DD";
+    public final static String HOUR= "HH";
+    public final static String MINUTE="mm";
+    public final static String SECOND= "ss";
+    public final static String MILLISECOND= "SSS";
+    public final static String YYYY_MM= "YYYY-MM";
+    public final static String YYYY_MM_DD= "YYYY-MM-dd";
+    /**24小时制*/
+    public final static String YYYY_MM_DD_24HH_mm_ss= "YYYY-MM-dd HH:mm:ss";
+    /**12小时制*/
+    public final static String YYYY_MM_DD_12HH_mm_ss= "YYYY-MM-dd hh:mm:ss";
+    /**24小时制*/
+    public final static String YYYY_MM_DD_HH_mm_ss_SSS= "YYYY-MM-dd HH:mm:ss:SSS";
+    public final static String YYYYMM= "YYYYMM";
+    public final static String YYYYMMDD= "YYYYMMdd";
+    /**24小时制*/
+    public final static String YYYYMMDDHHmmss= "YYYYMMddHHmmss";
+    public static SimpleDateFormat sdf ;
 
     /**
      *获取日期所在年
      */
-    private static int getYear(Date date){
+    public static int getYear(Date date){
         sdf=new SimpleDateFormat(DateUtils.YEAR);
         return Integer.valueOf(sdf.format(date));
     }
@@ -43,28 +47,28 @@ public class DateUtils {
     /**
      *获取日期月
      */
-    private static Integer getMonth(Date date){
+    public static Integer getMonth(Date date){
         sdf=new SimpleDateFormat(DateUtils.MONTH);
         return Integer.valueOf(sdf.format(date));
     }
     /**
      *获取日期天
      */
-    private static Integer getDay(Date date){
+    public static Integer getDay(Date date){
         sdf=new SimpleDateFormat(DateUtils.DAY);
         return Integer.valueOf(sdf.format(date));
     }
     /**
      *获取日期时
      */
-    private static Integer getHour(Date date){
+    public static Integer getHour(Date date){
         sdf=new SimpleDateFormat(DateUtils.HOUR);
         return Integer.valueOf(sdf.format(date));
     }
     /**
      *获取日期分
      */
-    private static Integer getMinute(Date date){
+    public static Integer getMinute(Date date){
         sdf=new SimpleDateFormat(DateUtils.MINUTE);
         return Integer.valueOf(sdf.format(date));
     }
@@ -72,7 +76,7 @@ public class DateUtils {
     /**
      *获取日期秒
      */
-    private static Integer getSecond(Date date){
+    public static Integer getSecond(Date date){
         sdf=new SimpleDateFormat(DateUtils.SECOND);
         return Integer.valueOf(sdf.format(date));
     }
@@ -80,7 +84,7 @@ public class DateUtils {
     /**
      *日期运算:给指定日期增加指定年
      */
-    private static Date addYear(Date date,Integer year){
+    public static Date addYear(Date date,Integer year){
         Calendar c = Calendar.getInstance();
         c.setTime(date);
         c.add(Calendar.YEAR,year);
@@ -90,7 +94,7 @@ public class DateUtils {
     /**
      *日期运算:给指定日期增加指定月
      */
-    private static Date addMonth(Date date,Integer month){
+    public static Date addMonth(Date date,Integer month){
         Calendar c = Calendar.getInstance();
         c.setTime(date);
         c.add(Calendar.MONTH,month);
@@ -100,7 +104,7 @@ public class DateUtils {
     /**
      *日期运算:给指定日期增加指定天
      */
-    private static Date addDay(Date date,Integer day){
+    public static Date addDay(Date date,Integer day){
         Calendar c = Calendar.getInstance();
         c.setTime(date);
         c.add(Calendar.DAY_OF_YEAR,day);
@@ -110,7 +114,7 @@ public class DateUtils {
     /**
      *日期运算:给指定日期增加指定时
      */
-    private static Date addHour(Date date,Integer hour){
+    public static Date addHour(Date date,Integer hour){
         Calendar c = Calendar.getInstance();
         c.setTime(date);
         c.add(Calendar.HOUR,hour);
@@ -120,7 +124,7 @@ public class DateUtils {
     /**
      *日期运算:给指定日期增加指定分钟
      */
-    private static Date addMinute(Date date,Integer minute){
+    public static Date addMinute(Date date,Integer minute){
         Calendar c = Calendar.getInstance();
         c.setTime(date);
         c.add(Calendar.MINUTE,minute);
@@ -130,7 +134,7 @@ public class DateUtils {
     /**
      *日期运算:给指定日期增加指定秒
      */
-    private static Date addSecond(Date date,Integer second){
+    public static Date addSecond(Date date,Integer second){
         Calendar c = Calendar.getInstance();
         c.setTime(date);
         c.add(Calendar.SECOND,second);
@@ -139,21 +143,21 @@ public class DateUtils {
     /**
      *将长整型的毫秒数转化为日期
      */
-    private static Date convertTimeToDate(Long time ){
+    public static Date convertTimeToDate(Long time ){
         return new Date(time);
     }
 
     /**
      *获取日期的毫秒数
      */
-    private static Long getTime(Date date){
+    public static Long getTime(Date date){
         return date.getTime();
     }
 
     /**
      *获取指定日期所在月的第一天的00时00分00秒00毫秒
      */
-    private static Date getFirstDayOfMonth(Date date){
+    public static Date getFirstDayOfMonth(Date date){
         Calendar c = Calendar.getInstance();
         c.setTime(date);
         c.set(Calendar.DAY_OF_MONTH,c.getActualMinimum(Calendar.DAY_OF_MONTH));
@@ -167,7 +171,7 @@ public class DateUtils {
     /**
      *返回当月最后一天的00时00分00秒00毫秒
      */
-    private static Date getLastDayOfMonth(Date date){
+    public static Date getLastDayOfMonth(Date date){
         Calendar c = Calendar.getInstance();
         c.setTime(date);
         c.set(Calendar.DAY_OF_MONTH,c.getActualMaximum(Calendar.DAY_OF_MONTH));
@@ -181,7 +185,7 @@ public class DateUtils {
     /**
      *返回当月最后一天的23时59分59秒999毫秒
      */
-    private static Date getLastDayTimeOfMonth(Date date){
+    public static Date getLastDayTimeOfMonth(Date date){
         Calendar c = Calendar.getInstance();
         c.setTime(date);
         //c.set(Calendar.DAY_OF_MONTH,1);
@@ -197,7 +201,7 @@ public class DateUtils {
     /**
      *将日期字符串按指定模式转化为日期
      */
-    private static Date convertStringtoDate(String time,String pattern){
+    public static Date convertStringtoDate(String time,String pattern){
         sdf=new SimpleDateFormat(pattern);
         Date date = new Date();
         try {
@@ -211,10 +215,44 @@ public class DateUtils {
     /**
      *将日期按指定模式转化为字符串
      */
-    private static String convertDatetoString(Date date,String pattern){
+    public static String convertDatetoString(Date date,String pattern){
         sdf=new SimpleDateFormat(pattern);
         String time = sdf.format(date);
         return time;
+    }
+
+    /**
+     * 获取指定日期是当前周周几
+     * @param date 指定日期
+     * @return 周几（时间是从周日开始计算的，周日-周六 对应返回 1-7）
+     */
+    public static int getDayOfWeek(Date date){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        return calendar.get(Calendar.DAY_OF_WEEK);
+    }
+
+    /**
+     * 获取指定日期是当前月第几天
+     * @param date 指定日期
+     * @return 当前月第几天
+     */
+    public static int getDayOfMonth(Date date){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        return calendar.get(Calendar.DAY_OF_MONTH);
+    }
+
+
+    /**
+     * 获取指定日期是当前月第几周
+     * @param date 指定日期
+     * @return 当前月第几周
+     */
+    public static int getWeekOfMonth(Date date){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        return calendar.get(Calendar.DAY_OF_WEEK_IN_MONTH);
     }
 
 
